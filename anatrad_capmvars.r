@@ -1,12 +1,12 @@
 ################################################################################
-# Script para generar variables CAPM en fondos de Renta Variable Mexicana
+# Script to calculate Modern Portfolio Theory (MPT) variables from Mexican Equity Funds
 ################################################################################
-# descargar los paquetes de CRAN
-#install.packages("data.table")
-#install.packages("xts")
-#install.packages("zoo")
-#install.packages("PerformanceAnalytics")
-# cargar paquetes a utilizar
+# Download needed packages from CAN website:
+#install.packages("xts")                  # Version >=0.9
+#install.packages("zoo")                  # Version >=1.7-10
+#install.packages("PerformanceAnalytics") # Version ==1.4.3541
+
+# Load required package, besides default packages from R version 3.2.3 (2015-12-10) -- "Wooden Christmas-Tree"
 require(PerformanceAnalytics)
 # Configurar nombre para archivo con resultados
 f_ana_result <- paste("RVMexico.capm_analysis_", format(Sys.time(), "%Y%m%d%H%M%S"), ".csv", sep="")
