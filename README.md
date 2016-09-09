@@ -6,7 +6,7 @@ Platform: x86_64-suse-linux-gnu (64-bit)
 
 >https://www.R-project.org/
 
-##Aditional packages:
+##Aditional R packages:
 ###PerformanceAnalytics - Version == 1.4.3541
 >**Brian G. Peterson and Peter Carl (2014)**. *PerformanceAnalytics: Econometric tools for performance and risk analysis*. R package version 1.4.3541.
 
