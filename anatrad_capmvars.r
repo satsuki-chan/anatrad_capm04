@@ -194,9 +194,9 @@ df_capm_results <- data.frame(
 names(df_capm_results) <- c(
       "alpha v BMV - w/ CETES 364D"
     , "beta v BMV - w/ CETES 364D"
-    , "r-squared"
+    , "r squared"
     , "standar deviation"
-    , "Sharpe Ratio - w/ CETES 364D"
+    , "Sharpe ratio - w/ CETES 364D"
     )
 
 # Removal of funds with incomplete number of returns
