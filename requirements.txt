@@ -1,3 +1,4 @@
+stats==3.2.3
 PerformanceAnalytics==1.4.3541
 xts==0.9-7
 zoo==1.7-11

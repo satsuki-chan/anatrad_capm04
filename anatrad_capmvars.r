@@ -1,12 +1,14 @@
 ################################################################################
-# Script to calculate Modern Portfolio Theory (MPT) variables from Mexican Equity Funds
+# Script to calculate Modern Portfolio Theory (MPT) variables from Mexican equity funds
 ################################################################################
-# Download needed packages from CAN website:
+# Base packages need:
+# stats              # Version >=3.2.3
+# Download and install of needed packages from CRAN Package archive website:
 #install.packages("PerformanceAnalytics") # Version ==1.4.3541
 #install.packages("xts")                  # Version >=0.9
 #install.packages("zoo")                  # Version >=1.7-10
 
-# Load required package, besides default packages from R version 3.2.3 (2015-12-10) -- "Wooden Christmas-Tree"
+# Load required package, besides base packages from R version 3.2.3 (2015-12-10) -- "Wooden Christmas-Tree"
 require(PerformanceAnalytics)
 # Name for file with results
 f_ana_result <- paste("RVMexico.capm_analysis_", format(Sys.time(), "%Y%m%d%H%M%S"), ".csv", sep="")
@@ -136,12 +138,12 @@ for (i_found in 2:n_founds) {
     #   coefficients: A p x 4 matrix with columns for the estimated coefficient, its standard error, t-statistic and corresponding (two-sided) p-value. Aliased coefficients are omitted.
     #        aliased: Named logical vector showing if the original coefficients are aliased.
     #          sigma: The square root of the estimated variance of the random error
-    #                 sigma^2 = 1/(n-p) Sum(w[i] R[i]^2),              
+    #                 sigma^2 = 1/(n-p) Sum(w[i] R[i]^2),
     #                 where R[i] is the i-th residual, ‘residuals[i]’.
     #             df: Degrees of freedom, a 3-vector (p, n-p, p*), the first being the number of non-aliased coefficients, the last being the total number of coefficients.
     #     fstatistic: (For models including non-intercept terms) A 3-vector with the value of the F-statistic with its numerator and denominator degrees of freedom.
     #      r.squared: R^2, the ‘fraction of variance explained by the model’,
-    #                 R^2 = 1 - Sum(R[i]^2) / Sum((y[i]- y*)^2),          
+    #                 R^2 = 1 - Sum(R[i]^2) / Sum((y[i]- y*)^2),
     #                 where y* is the mean of y[i] if there is an intercept and zero otherwise.
     #  adj.r.squared: The above R^2 statistic ‘_adjusted_’, penalizing for higher p.
     #   cov.unscaled: A p x p matrix of (unscaled) covariances of the coef[j], j=1, ..., p.
@@ -208,6 +210,6 @@ if (n_wrong_founds >= 1) {
     l_founds <- l_founds[-c(l_wrong_founds)]
 } # if
 
-# Writing and showing of results
+# Writing and displaying of results
 write.csv(df_capm_results, f_ana_result)
 print(df_capm_results)
